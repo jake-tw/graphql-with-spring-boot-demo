@@ -1,0 +1,8 @@
+type Query {
+    allBooks: [Book]
+    countBooks: Long
+    allAuthors: [Author]
+    countAuthors: Long
+    book(id: ID!): Book
+    author(id: ID!): Author
+}

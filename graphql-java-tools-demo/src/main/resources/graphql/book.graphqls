@@ -1,0 +1,10 @@
+"""
+書籍
+"""
+type Book {
+    id: ID!
+    name: String
+    authorId: ID!
+    "作者"
+    author: Author
+}

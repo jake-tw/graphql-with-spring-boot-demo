@@ -1,0 +1,6 @@
+type Mutation {
+    addAuthor(name: String!): Author
+    deleteAuthor(id: ID!): Boolean
+    addBook(name: String!, authorId: Int!): Book
+    deleteBook(id: ID!): Boolean
+}
