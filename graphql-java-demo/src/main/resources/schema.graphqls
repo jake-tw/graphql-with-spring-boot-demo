@@ -1,8 +1,8 @@
 type Query {
     allBooks: [Book]
-    countBooks: Long
+    countBooks: Int
     allAuthors: [Author]
-    countAuthors: Long
+    countAuthors: Int
     book(id: ID!): Book
     author(id: ID!): Author
 }

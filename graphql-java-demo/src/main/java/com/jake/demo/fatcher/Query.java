@@ -51,11 +51,11 @@ public class Query {
         };
     }
 
-    public DataFetcher<Long> countBooks() {
-        return dataFetchingEnvironment -> Long.valueOf(bookRepository.count());
+    public DataFetcher<Integer> countBooks() {
+        return dataFetchingEnvironment -> Integer.valueOf(bookRepository.count());
     }
 
-    public DataFetcher<Long> countAuthors() {
-        return dataFetchingEnvironment -> Long.valueOf(authorRepository.count());
+    public DataFetcher<Integer> countAuthors() {
+        return dataFetchingEnvironment -> Integer.valueOf(authorRepository.count());
     }
 }

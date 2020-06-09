@@ -45,11 +45,11 @@ public class Query implements GraphQLQueryResolver {
         return r;
     }
 
-    public long countBooks() {
+    public int countBooks() {
         return bookRepository.count();
     }
 
-    public long countAuthors() {
+    public int countAuthors() {
         return authorRepository.count();
     }
 }
