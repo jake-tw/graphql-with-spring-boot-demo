@@ -47,4 +47,4 @@ GET /books/:id/comments
 }
 ```
 
-而在 RESTful 查詢可能會有些冗餘的資料，像是最開始要查詢作者的 id 時，我們可能還不需要 price, bookType...等資訊，但 RESTful 仍然會進行回傳。
+而在 RESTful 查詢可能會有些冗餘的資料，像是最開始要查詢作者的 id 時，我們可能還不需要 price, bookType...等資訊，使用 GraphQL 的話每次都只取剛好需要的資料，不多不少。
