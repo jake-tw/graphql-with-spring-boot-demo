@@ -85,4 +85,4 @@ type Book {
 }
 ```
 
-透過 GraphQL Playground 之類的工具，不用自行撰寫 { __schema {...} } 也能取得文件，不過有一點要注意的是，Introspection 同時也對外暴露了完整的資料結構，雖然 Server 端可以決定是否開放 Introspection 給外部使用，但關閉此功能會違反 GraphQL spec 與大多數使用者的期望。
+透過 GraphQL Playground 之類的工具，不用自行撰寫 { __schema {...} } 也能取得文件，不過有一點要注意的是，Introspection 同時也對外暴露了完整的資料結構，Server 端可以依照產品的使用情境，決定是否開放 Introspection 給外部使用。
