@@ -5,8 +5,7 @@
 - [GraphQL 優缺點](./document/pros_and_cons)
 - [GraphQL 入門](./document/begin_graphql)
 	- [Schema and Resolver](./document/schema_and_resolver)
-	- [Query and Mutation](./document/query_and_mutation) + filed + alias
-	- [Subscription](./document/subsciption)
+	- [Query and Mutation and Subscription](./document/query_and_mutation_and_subscription)
 	- [Fragment](./document/fragment) + Inline Fragments
 	- [Variable](./document/variable)
 	- [Directive](./document/directive)
@@ -31,5 +30,6 @@
 
 > https://graphql.org/  
 > https://www.howtographql.com/  
+> http://spec.graphql.org/  
 > https://engineering.fb.com/core-data/graphql-a-data-query-language/  
 > https://ithelp.ithome.com.tw/articles/10200678
