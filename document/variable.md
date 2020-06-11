@@ -48,7 +48,7 @@ mutation createUser($input: CreateUserInput!) {
 ```
 
 ```txt
-# Variables
+// Variables
 {
     "input": {
         "email": "test@test.com"
@@ -56,3 +56,5 @@ mutation createUser($input: CreateUserInput!) {
     }
 }
 ```
+
+最後需要注意的是，GraphQL 規範 Variable 宣告後必需要被使用，Client 端可以安裝額外的插件來處理未使用的 Variable。

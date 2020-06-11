@@ -64,18 +64,18 @@ GraphQL 有著強大的內省機制，讓開發者完成 Schema 的同時就能�
 	}
 	```
 
-針對命名容易混淆的內容也能用註解標註
+4. Client 可透過 Introspection 取得 Schema 中的註解，讓 Schema 取代文件
 
 ```txt
 """
-這是多行註解，通常用於描述 Object
+多行註解通常用於描述 Object
 """
-# 這個註解不會出現在前端
+# 這個註解 Client 看不到
 type Book {
     id: ID!
     name: String
 
-    "這是單行註解，通常用於描述 Field"
+    "單行註解通常用於描述 Field"
     authorId: ID!
 
     """

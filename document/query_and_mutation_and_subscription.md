@@ -1,10 +1,10 @@
 # Query and Mutation and Subscription
 
-GraphQL 有三個 root type，所有的操作都是由 root type 向下延伸
+GraphQL 有三個 Root type，所有的操作都是由 Root type 向下延伸
 
 - Query 用來表示查詢，查詢的內容稱為 Fields
     - Query 關鍵字必須是小寫，一般查詢時可省略
-    - Fields 可使用下滑線且大小寫敏感，bookName、bookname 與 book_name 都是不同物件
+    - Fields 可使用下滑線且大小寫敏感，e.g. bookName、bookname、book_name 都是不同物件
     - '#' 在查詢時使用註解
     - 可以傳入 Arguments : field(arg1: argVal1, arg2: argVal2...)
     - 回傳可預期結構的 JSON
@@ -66,6 +66,8 @@ GraphQL 有三個 root type，所有的操作都是由 root type 向下延伸
         - Request
 
         ```txt
+        # Operation name : aliasTest
+        # Alias : hello, world
         query aliasTest {
             hello: book(id: 1) {
                 world: name
@@ -86,6 +88,7 @@ GraphQL 有三個 root type，所有的操作都是由 root type 向下延伸
         ```
 
 接下來看看實際發送 POST /graphql(*1) 需要哪些東西
+
 - Header : Content-Type:application/json / Content-Type:application/graphql
 - Request Body
     - application/json : 較常規的做法
@@ -97,19 +100,22 @@ GraphQL 有三個 root type，所有的操作都是由 root type 向下延伸
         {
             "operationName": "aliasTest",
             "variables": {},
-            "query": "query aliasTest { book(id: 1) { name } }"
+            "query": "query aliasTest { hello: book(id: 1) { world: name } }"
         }
         ```
 
         ```json
         {
-            "query":"mutation { deleteBook(id: 5) } "
+            "query":"mutation { deleteBook(id: 5) }"
         }
         ```
-    - application/graphql : 部分 server 不接受此類型的 Header
-        - 支援 graphql header 的情況，直接將 Query 放在 Request body 中即可
+        
+    - application/graphql : 部分 Server 不接受此類型的 Header
+        - Query 直接放在 Request body 中
+        - Variable 放在 Query string(*2)
 
         ```txt
+        # POST /graphql?variables={...}
         query aliasTest {
             hello: book(id: 1) {
                 world: name
@@ -117,4 +123,5 @@ GraphQL 有三個 root type，所有的操作都是由 root type 向下延伸
         }
         ```
 
-> 1. 也可以使用 GET /graphql?query={me{name}} 的形式發送，但不推薦
+> 1. 也可以使用 GET /graphql?query=query+getUser($id:ID){user(id:$id){name}}&variables={"id":"4"} 的形式發送，但不推薦  
+> 2. 部分 Server 可接受 application/graphql 但不能使用 Query string 傳送 Variable

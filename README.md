@@ -6,7 +6,8 @@
 - [GraphQL 入門](./document/begin_graphql)
 	- [Schema and Resolver](./document/schema_and_resolver)
 	- [Query and Mutation and Subscription](./document/query_and_mutation_and_subscription)
-	- [Fragment](./document/fragment) + Inline Fragments
+	- [Fragment](./document/fragment)
+	- [Inline Fragment](./document/inline_fragment)
 	- [Variable](./document/variable)
 	- [Directive](./document/directive)
 	- [Introspection](./document/introspection)
