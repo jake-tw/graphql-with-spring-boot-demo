@@ -31,7 +31,7 @@ public class Mutation {
         return dataFetchingEnvironment -> {
             String name = dataFetchingEnvironment.getArgument("name");
             String authorId = dataFetchingEnvironment.getArgument("authorId");
-            return bookRepository.save(Book.builder().id(BookSeq.nextval()).name(name).authorId(Integer.valueOf(authorId)).build());
+            return bookRepository.save(Book.builder().id(BookSeq.nextval()).name(name).author(authorRepository.findById(Integer.valueOf(authorId))).build());
         };
     }
 

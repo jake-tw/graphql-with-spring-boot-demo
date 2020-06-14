@@ -31,7 +31,7 @@ public class Mutation implements GraphQLMutationResolver {
         return bookRepository.save(Book.builder()
                 .id(BookSeq.nextval())
                 .name(name)
-                .authorId(authorId)
+                .author(authorRepository.findById(authorId))
                 .build());
     }
 
