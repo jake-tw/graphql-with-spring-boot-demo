@@ -1,6 +1,6 @@
 # Variable
 
-GraphQL 與 SQL 一樣都會有 Injection 的問題，可以使用 Variable 進行參數化 Query 來解決，Variable 與其他查詢不同，會獨立一個 Key，直接來看以下範例
+GraphQL 與 SQL 一樣都會有 Injection 的問題，可以使用 Variable 進行參數化 Query 來解決，直接來看以下範例
 
 ```json
 {
@@ -11,10 +11,10 @@ GraphQL 與 SQL 一樣都會有 Injection 的問題，可以使用 Variable 進�
 }
 ```
 
-- Query : '$' 表示宣告變數，':'後表示型別，型別與必填與否需要和使用變數的地方一致，可以宣告多個變數，Alias 可加可不加但 query 不可省略
+- Query : '$' 表示宣告變數，':'後表示型別，型別與必填與否需要和使用變數的地方一致，可以宣告多個變數，Operation name 可加可不加但 query 不可省略
 
     ```txt
-    query alias($bookId: ID!, $authorId: ID!) {
+    query OperationName($bookId: ID!, $authorId: ID!) {
         book(id: $bookId) {
             name
         }
@@ -37,7 +37,7 @@ Variable 也可以是物件型態
 
 ```txt
 # Mutation
-mutation createUser($input: CreateUserInput!) {
+mutation CreateUser($input: CreateUserInput!) {
     createUser(input: $input) {
         user {
             email

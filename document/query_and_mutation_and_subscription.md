@@ -66,9 +66,9 @@ GraphQL 有三個 Root type，所有的操作都是由 Root type 向下延伸
         - Request
 
         ```txt
-        # Operation name : aliasTest
+        # Operation name : AliasTest
         # Alias : hello, world
-        query aliasTest {
+        query AliasTest {
             hello: book(id: 1) {
                 world: name
             }

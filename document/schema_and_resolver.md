@@ -7,7 +7,7 @@ GraphQL API 最重要的兩個元件就是 Schema 和 Resolver
 
 打個比方
 
-- 餐廳有菜單，上面列出所有客戶需要的資訊，包含價格、品項...等，當客戶點完單後，店員接收訂單並準備出餐
+- 餐廳有菜單，上面列出所有客戶需要的資訊，包含價格、品項...等，當客戶可以自由組合餐點內容，點完餐後，店員接收訂單並準備出餐
 - 系統有 Schema，上面列出所有 Client 可取得的資訊，包含價格、品項...等，當 Client 發送 Query 後，Resolver 負責解析 Query 並取得資料
 
 GraphQL schema 是由數個 Type 與 Type 之間的關聯所組成，若使用 GraphQL Voyager(*1) 可以將 Schema 解析為一幅視圖，所有的元素都由 Root 出發，並根據 Type 的定義逐步往下查找，下面來介紹 Schema 的基本用法
