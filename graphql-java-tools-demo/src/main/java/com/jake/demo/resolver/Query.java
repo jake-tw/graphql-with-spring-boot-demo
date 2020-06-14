@@ -34,7 +34,7 @@ public class Query implements GraphQLQueryResolver {
         if (r == null) {
             throw new QueryNotFoundException("Book not found.");
         }
-        return bookRepository.findById(id);
+        return r;
     }
 
     public Author author(int id) {
