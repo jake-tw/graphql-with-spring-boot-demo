@@ -15,6 +15,7 @@
     <modules>
         <module>graphql-java-demo</module>
         <module>graphql-java-tools-demo</module>
+        <module>graphql-spqr</module>
     </modules>
 
 </project>
