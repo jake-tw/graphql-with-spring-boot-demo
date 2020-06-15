@@ -21,8 +21,9 @@
 	- [GraphQL Java](./document/graphql_java)
 	- [GraphQL Java Tools](./document/graphql_java_tools)
 	- [GraphQL SPQR](./document/graphql_spqr)
+	- [Debug](./document/debug)
+- [DataLoader](./document/dataloader)
 - [Relay](./document/relay)
-- [Debug](./document/debug)
 - [總結](./document/summary)
 
 <br>
@@ -33,4 +34,5 @@
 > https://www.howtographql.com/  
 > http://spec.graphql.org/  
 > https://engineering.fb.com/core-data/graphql-a-data-query-language/  
-> https://ithelp.ithome.com.tw/articles/10200678
+> https://ithelp.ithome.com.tw/articles/10200678  
+> https://github.com/APIs-guru/graphql-apis

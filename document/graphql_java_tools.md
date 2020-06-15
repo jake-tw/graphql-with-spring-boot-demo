@@ -1,6 +1,7 @@
 # GraphQL Java Tools
 
 1. Dependency
+
     ```xml
     <dependency>
         <groupId>com.graphql-java-kickstart</groupId>

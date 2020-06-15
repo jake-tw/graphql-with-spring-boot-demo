@@ -22,3 +22,4 @@ GraphQL API 可以使用任何語言實作，目前主力使用的語言是 Java
         - https://github.com/leangen/graphql-spqr
         - Base on GraphQL Java
         - Code first
+        - Schema free

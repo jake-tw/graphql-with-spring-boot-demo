@@ -6,6 +6,7 @@
     - 不可有參數
     - 不可使用一般的 Object type( Output type )
     - 只能放入 Input type, Default type 當 Field
+    
 - Input type 除了關鍵字是 input 以外，和一般的 Object type( Output type ) 沒有區別
 
     ```txt
