@@ -21,30 +21,30 @@ public class Mutation {
     private AuthorRepository authorRepository;
 
     public DataFetcher<Author> addAuthor() {
-        return dataFetchingEnvironment -> {
-            String name = dataFetchingEnvironment.getArgument("name");
+        return env -> {
+            String name = env.getArgument("name");
             return authorRepository.save(Author.builder().id(AuthorSeq.nextval()).name(name).build());
         };
     }
 
     public DataFetcher<Book> addBook() {
-        return dataFetchingEnvironment -> {
-            String name = dataFetchingEnvironment.getArgument("name");
-            String authorId = dataFetchingEnvironment.getArgument("authorId");
+        return env -> {
+            String name = env.getArgument("name");
+            String authorId = env.getArgument("authorId");
             return bookRepository.save(Book.builder().id(BookSeq.nextval()).name(name).author(authorRepository.findById(Integer.valueOf(authorId))).build());
         };
     }
 
     public DataFetcher<Boolean> deleteAuthor() {
-        return dataFetchingEnvironment -> {
-            String id = dataFetchingEnvironment.getArgument("id");
+        return env -> {
+            String id = env.getArgument("id");
             return authorRepository.delete(Integer.valueOf(id));
         };
     }
 
     public DataFetcher<Boolean> deleteBook() {
-        return dataFetchingEnvironment -> {
-            String id = dataFetchingEnvironment.getArgument("id");
+        return env -> {
+            String id = env.getArgument("id");
             return bookRepository.delete(Integer.valueOf(id));   
         };
     }

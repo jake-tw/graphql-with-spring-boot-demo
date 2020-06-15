@@ -22,16 +22,16 @@ public class Query {
     private AuthorRepository authorRepository;
 
     public DataFetcher<List<Book>> allBooks() {
-        return dataFetchingEnvironment -> bookRepository.findAll();
+        return env -> bookRepository.findAll();
     }
 
     public DataFetcher<List<Author>> allAuthors() {
-        return dataFetchingEnvironment -> authorRepository.findAll();
+        return env -> authorRepository.findAll();
     }
 
     public DataFetcher<Book> book() {
-        return dataFetchingEnvironment -> {
-            String bookId = dataFetchingEnvironment.getArgument("id");
+        return env -> {
+            String bookId = env.getArgument("id");
             Book r = bookRepository.findById(Integer.valueOf(bookId));
             if (r == null) {
                 throw new QueryNotFoundException("Book not found.");
@@ -41,8 +41,8 @@ public class Query {
     }
 
     public DataFetcher<Author> author() {
-        return dataFetchingEnvironment -> {
-            String authorId = dataFetchingEnvironment.getArgument("id");
+        return env -> {
+            String authorId = env.getArgument("id");
             Author r = authorRepository.findById(Integer.valueOf(authorId));
             if (r == null) {
                 throw new QueryNotFoundException("Author not found.");
@@ -52,10 +52,10 @@ public class Query {
     }
 
     public DataFetcher<Integer> countBooks() {
-        return dataFetchingEnvironment -> Integer.valueOf(bookRepository.count());
+        return env -> Integer.valueOf(bookRepository.count());
     }
 
     public DataFetcher<Integer> countAuthors() {
-        return dataFetchingEnvironment -> Integer.valueOf(authorRepository.count());
+        return env -> Integer.valueOf(authorRepository.count());
     }
 }

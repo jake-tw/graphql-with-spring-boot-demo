@@ -14,6 +14,7 @@ import com.jake.demo.fatcher.Mutation;
 import com.jake.demo.fatcher.Query;
 
 import graphql.GraphQL;
+import graphql.execution.instrumentation.tracing.TracingInstrumentation;
 import graphql.schema.GraphQLSchema;
 import graphql.schema.idl.RuntimeWiring;
 import graphql.schema.idl.SchemaGenerator;
@@ -37,7 +38,9 @@ public class GraphqlProvider {
         URL url = Resources.getResource("schema.graphqls");
         String sdl = Resources.toString(url, Charsets.UTF_8);
         GraphQLSchema graphQLSchema = buildSchema(sdl);
-        return GraphQL.newGraphQL(graphQLSchema).build();
+        return GraphQL.newGraphQL(graphQLSchema)
+                .instrumentation(new TracingInstrumentation())
+                .build();
     }
 
     private GraphQLSchema buildSchema(String sdl) {

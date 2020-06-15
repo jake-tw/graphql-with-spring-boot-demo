@@ -16,8 +16,8 @@ public class BookDataFetchers {
     private AuthorRepository authorRepository;
 
     public DataFetcher<Author> author() {
-        return dataFetchingEnvironment -> {
-            Book book = dataFetchingEnvironment.getSource();
+        return env -> {
+            Book book = env.getSource();
             return authorRepository.findById(book.getAuthor().getId());
         };
     }
