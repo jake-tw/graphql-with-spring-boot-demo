@@ -64,7 +64,7 @@ query HeroForEpisode($ep: Episode!) {
 
 ```txt
 type Query {
-    # id 都不重複時可以實現全文檢索功能
+    # 建議使用 Node 的 ID 不要重複
     node(id: ID!): Node
     nodes(ids: [ID!]): [Node]!
 }
@@ -82,6 +82,25 @@ type Book implements Node {
 type Author implements Node {
     id: ID!
     ...
+}
+```
+
+Node 查詢範例
+
+```txt
+{
+    fourNode: node(id: "4") {
+        id
+        ... on User {
+            name
+        }
+    }
+    fiveNode: node(id: "5") {
+        id
+        ... on User {
+            name
+        }
+    }
 }
 ```
 

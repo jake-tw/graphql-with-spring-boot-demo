@@ -10,7 +10,7 @@ GraphQL 有三個 Root type，所有的操作都是由 Root type 向下延伸
         - 多個參數時，查詢時至少要放一個
         - 參數順序沒有限制
         - Schema 有 '!' 的參數為必填欄位
-        
+
     - 回傳可預期結構的 JSON
     - example
         - Request
@@ -91,6 +91,8 @@ GraphQL 有三個 Root type，所有的操作都是由 Root type 向下延伸
         }
         ```
 
+<br> 
+
 接下來看看實際發送 POST /graphql(*1) 需要哪些東西
 
 - Header : Content-Type:application/json / Content-Type:application/graphql
@@ -127,5 +129,24 @@ GraphQL 有三個 Root type，所有的操作都是由 Root type 向下延伸
         }
         ```
 
+<br> 
+
+GraphQL 查詢不管成功或失敗，都會回傳有固定結構的 JSON
+
+- data : 查詢成功的資料
+- errors : 查詢異常資訊
+- extensions : Apollo Tracing(*3) 使用的 Key
+
+    ```json
+    {
+        "data": {},
+        "errors": [],
+        "extensions": {}
+    }
+    ```
+
+<br> 
+
 > 1. 也可以使用 GET /graphql?query=query+getUser($id:ID){user(id:$id){name}}&variables={"id":"4"} 的形式發送，但不推薦  
-> 2. 部分 Server 可接受 application/graphql 但不能使用 Query string 傳送 Variable
+> 2. 部分 Server 可接受 application/graphql 但不能使用 Query string 傳送 Variable  
+> 3. Apollo Tracing 是 GraphQL 其中一個熱門的效能追蹤工具
