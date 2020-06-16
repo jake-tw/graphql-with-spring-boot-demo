@@ -1,10 +1,12 @@
 package com.jake.demo.repository;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Repository;
 
+import com.jake.demo.MockDataProvider;
+import com.jake.demo.MockDataProvider.AuthorSeq;
 import com.jake.demo.model.Author;
 
 @Repository
@@ -15,9 +17,7 @@ public class AuthorRepository {
     }
 
     public List<Author> findAll() {
-        List<Author> r = new ArrayList<>();
-        MockDataProvider.MOCK_AUTHOR_DATA.entrySet().forEach(entry -> r.add(entry.getValue()));
-        return r;
+        return MockDataProvider.MOCK_AUTHOR_DATA.values().stream().collect(Collectors.toList());
     }
 
     public int count() {
@@ -25,7 +25,9 @@ public class AuthorRepository {
     }
 
     public Author save(Author author) {
-        MockDataProvider.MOCK_AUTHOR_DATA.put(author.getId(), author);
+        int id = AuthorSeq.nextval();
+        author.setId(id);
+        MockDataProvider.MOCK_AUTHOR_DATA.put(id, author);
         return author;
     }
 

@@ -3,12 +3,12 @@ package com.jake.demo.fatcher;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
+import com.jake.demo.MockDataProvider.AuthorSeq;
+import com.jake.demo.MockDataProvider.BookSeq;
 import com.jake.demo.model.Author;
 import com.jake.demo.model.Book;
 import com.jake.demo.repository.AuthorRepository;
 import com.jake.demo.repository.BookRepository;
-import com.jake.demo.repository.MockDataProvider.AuthorSeq;
-import com.jake.demo.repository.MockDataProvider.BookSeq;
 
 import graphql.schema.DataFetcher;
 
@@ -23,7 +23,7 @@ public class Mutation {
     public DataFetcher<Author> addAuthor() {
         return env -> {
             String name = env.getArgument("name");
-            return authorRepository.save(Author.builder().id(AuthorSeq.nextval()).name(name).build());
+            return authorRepository.save(Author.builder().name(name).build());
         };
     }
 
@@ -31,7 +31,11 @@ public class Mutation {
         return env -> {
             String name = env.getArgument("name");
             String authorId = env.getArgument("authorId");
-            return bookRepository.save(Book.builder().id(BookSeq.nextval()).name(name).author(authorRepository.findById(Integer.valueOf(authorId))).build());
+            return bookRepository.save(
+                    Book.builder()
+                    .name(name)
+                    .author(authorRepository.findById(Integer.valueOf(authorId)))
+                    .build());
         };
     }
 

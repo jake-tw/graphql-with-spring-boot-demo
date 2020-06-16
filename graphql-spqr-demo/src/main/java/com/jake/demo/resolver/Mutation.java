@@ -3,12 +3,12 @@ package com.jake.demo.resolver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
+import com.jake.demo.MockDataProvider.AuthorSeq;
+import com.jake.demo.MockDataProvider.BookSeq;
 import com.jake.demo.model.Author;
 import com.jake.demo.model.Book;
 import com.jake.demo.repository.AuthorRepository;
 import com.jake.demo.repository.BookRepository;
-import com.jake.demo.repository.MockDataProvider.AuthorSeq;
-import com.jake.demo.repository.MockDataProvider.BookSeq;
 
 import io.leangen.graphql.annotations.GraphQLMutation;
 import io.leangen.graphql.spqr.spring.annotations.GraphQLApi;

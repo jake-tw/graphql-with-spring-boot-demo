@@ -1,26 +1,20 @@
-package com.jake.demo.repository;
+package com.jake.demo;
 
-import java.util.HashMap;
 import java.util.Map;
-
-import javax.annotation.PostConstruct;
-
-import org.springframework.stereotype.Repository;
+import java.util.concurrent.ConcurrentHashMap;
 
 import com.jake.demo.model.Author;
 import com.jake.demo.model.Book;
 
-@Repository
 public class MockDataProvider {
 
     private static int authorSeq;
     private static int bookSeq;
 
-    public static final Map<Integer, Author> MOCK_AUTHOR_DATA = new HashMap<Integer, Author>();
+    public static final Map<Integer, Author> MOCK_AUTHOR_DATA = new ConcurrentHashMap<Integer, Author>();
 
-    public static final Map<Integer, Book> MOCK_BOOK_DATA = new HashMap<Integer, Book>();
+    public static final Map<Integer, Book> MOCK_BOOK_DATA = new ConcurrentHashMap<Integer, Book>();
 
-    @PostConstruct
     public static void init() {
 
         MOCK_AUTHOR_DATA.put(1, Author.builder().id(1).name("Joshua Bloch").build());
