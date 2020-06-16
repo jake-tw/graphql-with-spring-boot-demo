@@ -7,6 +7,10 @@ GraphQL 有三個 Root type，所有的操作都是由 Root type 向下延伸
     - Fields 可使用下滑線且大小寫敏感，e.g. bookName、bookname、book_name 都是不同物件
     - '#' 在查詢時使用註解
     - 可以傳入 Arguments : field(arg1: argVal1, arg2: argVal2...)
+        - 多個參數時，查詢時至少要放一個
+        - 參數順序沒有限制
+        - Schema 有 '!' 的參數為必填欄位
+        
     - 回傳可預期結構的 JSON
     - example
         - Request
