@@ -3,8 +3,6 @@ package com.jake.demo.resolver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
-import com.jake.demo.MockDataProvider.AuthorSeq;
-import com.jake.demo.MockDataProvider.BookSeq;
 import com.jake.demo.model.Author;
 import com.jake.demo.model.Book;
 import com.jake.demo.repository.AuthorRepository;
