@@ -1,0 +1,33 @@
+type Query {
+    allBooks: [Book]
+    countBooks: Int
+    allAuthors: [Author]
+    countAuthors: Int
+    book(id: ID!): Book
+    author(id: ID!): Author
+}
+
+"""
+書籍
+"""
+type Book {
+    id: ID!
+    name: String
+    "作者"
+    author: Author
+}
+
+"""
+作者
+"""
+type Author {
+    id: ID!
+    name: String
+}
+
+type Mutation {
+    addAuthor(name: String!): Author
+    deleteAuthor(id: ID!): Boolean
+    addBook(name: String!, authorId: Int!): Book
+    deleteBook(id: ID!): Boolean
+}
