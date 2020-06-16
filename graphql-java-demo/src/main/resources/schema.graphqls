@@ -28,6 +28,6 @@ type Author {
 type Mutation {
     addAuthor(name: String!): Author
     deleteAuthor(id: ID!): Boolean
-    addBook(name: String!, authorId: Int!): Book
+    addBook(name: String!, authorId: ID!): Book
     deleteBook(id: ID!): Boolean
 }
