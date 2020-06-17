@@ -1,4 +1,4 @@
-package com.jake.demo.resolver;
+package com.jake.demo.fatcher;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -7,15 +7,18 @@ import com.jake.demo.model.Author;
 import com.jake.demo.model.Book;
 import com.jake.demo.repository.AuthorRepository;
 
-import graphql.kickstart.tools.GraphQLResolver;
+import graphql.schema.DataFetcher;
 
 @Controller
-public class BookResolver implements GraphQLResolver<Book> {
-
+public class BookDataFetchers {
+    
     @Autowired
     private AuthorRepository authorRepository;
 
-    public Author author(Book book) {
-        return authorRepository.findById(book.getAuthor().getId());
+    public DataFetcher<Author> author() {
+        return env -> {
+            Book book = env.getSource();
+            return authorRepository.findById(book.getAuthor().getId());
+        };
     }
 }
