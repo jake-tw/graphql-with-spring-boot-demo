@@ -7,7 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class GraphqlJavaToolsDemoApplication {
 
     public static void main(String[] args) {
-        MockDataProvider.init();
         SpringApplication.run(GraphqlJavaToolsDemoApplication.class, args);
     }
 

@@ -13,27 +13,27 @@ import com.jake.demo.model.Book;
 public class BookRepository {
 
     public Book findById(int id) {
-        return MockDataProvider.MOCK_BOOK_DATA.get(id);
+        return MockDataProvider.mockBookData.get(id);
     }
 
     public List<Book> findAll() {
-        return MockDataProvider.MOCK_BOOK_DATA.values().stream().collect(Collectors.toList());
+        return MockDataProvider.mockBookData.values().stream().collect(Collectors.toList());
     }
 
     public int count() {
-        return MockDataProvider.MOCK_BOOK_DATA.size();
+        return MockDataProvider.mockBookData.size();
     }
 
     public Book save(Book book) {
         int id = BookSeq.nextval();
         book.setId(id);
-        MockDataProvider.MOCK_BOOK_DATA.put(id, book);
+        MockDataProvider.mockBookData.put(id, book);
         return book;
     }
 
     public boolean delete(int id) {
-        if (MockDataProvider.MOCK_BOOK_DATA.containsKey(id)) {
-            MockDataProvider.MOCK_BOOK_DATA.remove(id);
+        if (MockDataProvider.mockBookData.containsKey(id)) {
+            MockDataProvider.mockBookData.remove(id);
             return true;
         } else {
             return false;

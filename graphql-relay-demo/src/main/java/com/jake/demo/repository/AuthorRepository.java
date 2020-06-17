@@ -13,27 +13,27 @@ import com.jake.demo.model.Author;
 public class AuthorRepository {
 
     public Author findById(int id) {
-        return MockDataProvider.MOCK_AUTHOR_DATA.get(id);
+        return MockDataProvider.mockAuthorData.get(id);
     }
 
     public List<Author> findAll() {
-        return MockDataProvider.MOCK_AUTHOR_DATA.values().stream().collect(Collectors.toList());
+        return MockDataProvider.mockAuthorData.values().stream().collect(Collectors.toList());
     }
 
     public int count() {
-        return MockDataProvider.MOCK_AUTHOR_DATA.size();
+        return MockDataProvider.mockAuthorData.size();
     }
 
     public Author save(Author author) {
         int id = AuthorSeq.nextval();
         author.setId(id);
-        MockDataProvider.MOCK_AUTHOR_DATA.put(id, author);
+        MockDataProvider.mockAuthorData.put(id, author);
         return author;
     }
 
     public boolean delete(int id) {
-        if (MockDataProvider.MOCK_AUTHOR_DATA.containsKey(id)) {
-            MockDataProvider.MOCK_AUTHOR_DATA.remove(id);
+        if (MockDataProvider.mockAuthorData.containsKey(id)) {
+            MockDataProvider.mockAuthorData.remove(id);
             return true;
         } else {
             return false;
