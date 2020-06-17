@@ -18,6 +18,7 @@
         <module>graphql-spqr-demo</module>
         <module>graphql-plain-demo</module>
         <module>graphql-relay-demo</module>
+        <module>graphql-dataloader-demo</module>
     </modules>
 
 </project>
