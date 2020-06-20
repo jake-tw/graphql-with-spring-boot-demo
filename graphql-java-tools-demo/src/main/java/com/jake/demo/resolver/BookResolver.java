@@ -1,7 +1,7 @@
 package com.jake.demo.resolver;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
 
 import com.jake.demo.model.Author;
 import com.jake.demo.model.Book;
@@ -9,7 +9,7 @@ import com.jake.demo.repository.AuthorRepository;
 
 import graphql.kickstart.tools.GraphQLResolver;
 
-@Controller
+@Service
 public class BookResolver implements GraphQLResolver<Book> {
 
     @Autowired

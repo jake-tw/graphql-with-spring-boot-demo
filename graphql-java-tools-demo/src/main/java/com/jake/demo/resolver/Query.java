@@ -3,7 +3,7 @@ package com.jake.demo.resolver;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
 
 import com.jake.demo.exception.QueryNotFoundException;
 import com.jake.demo.model.Author;
@@ -13,7 +13,7 @@ import com.jake.demo.repository.BookRepository;
 
 import graphql.kickstart.tools.GraphQLQueryResolver;
 
-@Controller
+@Service
 public class Query implements GraphQLQueryResolver {
 
     @Autowired

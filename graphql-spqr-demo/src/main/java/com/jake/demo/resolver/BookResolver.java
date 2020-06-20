@@ -1,7 +1,7 @@
 package com.jake.demo.resolver;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
 
 import com.jake.demo.model.Author;
 import com.jake.demo.model.Book;
@@ -11,7 +11,7 @@ import io.leangen.graphql.annotations.GraphQLContext;
 import io.leangen.graphql.annotations.GraphQLQuery;
 import io.leangen.graphql.spqr.spring.annotations.GraphQLApi;
 
-@Controller
+@Service
 @GraphQLApi
 public class BookResolver {
 

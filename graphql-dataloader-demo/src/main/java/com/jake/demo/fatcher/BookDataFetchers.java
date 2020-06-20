@@ -3,7 +3,7 @@ package com.jake.demo.fatcher;
 import java.util.concurrent.CompletableFuture;
 
 import org.dataloader.DataLoader;
-import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
 
 import com.jake.demo.loader.AuthorLoader;
 import com.jake.demo.model.Author;
@@ -11,7 +11,7 @@ import com.jake.demo.model.Book;
 
 import graphql.schema.DataFetcher;
 
-@Controller
+@Service
 public class BookDataFetchers {
     
     public DataFetcher<CompletableFuture<Author>> author() {

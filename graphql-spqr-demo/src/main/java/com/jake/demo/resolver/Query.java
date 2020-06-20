@@ -3,7 +3,7 @@ package com.jake.demo.resolver;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
 
 import com.jake.demo.exception.QueryNotFoundException;
 import com.jake.demo.model.Author;
@@ -15,7 +15,7 @@ import io.leangen.graphql.annotations.GraphQLArgument;
 import io.leangen.graphql.annotations.GraphQLQuery;
 import io.leangen.graphql.spqr.spring.annotations.GraphQLApi;
 
-@Controller
+@Service
 @GraphQLApi
 public class Query {
 
