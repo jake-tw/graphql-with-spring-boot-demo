@@ -14,7 +14,7 @@
     - Root annotation
 
         ```java
-        @Controller
+        @Service
         @GraphQLApi
         public class Query {
             ...
@@ -31,7 +31,7 @@
         ```
 
         ```java
-        @Controller
+        @Service
         @GraphQLApi
         public class Mutation {
             ...
@@ -45,7 +45,7 @@
     - Nested query
 
         ```java
-        @Controller
+        @Service
         @GraphQLApi
         public class BookResolver {
             ...

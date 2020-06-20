@@ -23,7 +23,7 @@ GraphQL 與大多數語言一樣都有 interface 和 union type 的概念，可�
 觀察回傳值可以發現
 
 1. Droid 註解掉了，所以不會出現
-2. Starshop 會多取得 model 的資料
+2. Starship 會多取得 model 的資料
 
 ```txt
 {

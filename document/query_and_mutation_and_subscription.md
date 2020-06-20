@@ -56,8 +56,8 @@ GraphQL 有三個 Root type，所有的操作都是由 Root type 向下延伸
     {
         "data": {
             "newMessage": {
-            "sender": "Hagrid",
-            "text": "You're a wizard!"
+                "sender": "Hagrid",
+                "text": "You're a wizard!"
             }
         }
     }
@@ -120,14 +120,14 @@ GraphQL 有三個 Root type，所有的操作都是由 Root type 向下延伸
         - Query 直接放在 Request body 中
         - Variable 放在 Query string(*2)
 
-        ```txt
-        # POST /graphql?variables={...}
-        query aliasTest {
-            hello: book(id: 1) {
-                world: name
+            ```txt
+            # POST /graphql?variables={...}
+            query AliasTest {
+                hello: book(id: 1) {
+                    world: name
+                }
             }
-        }
-        ```
+            ```
 
 <br> 
 

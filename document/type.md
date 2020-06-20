@@ -22,7 +22,7 @@
             # User 物件
             type User {
                 name
-                geight
+                height
             }
         ```
 
@@ -32,9 +32,9 @@
         ```txt
         enum LengthUnit {
             "公尺"
-            METRE
+            METER
             "公分"
-            CENTIMETRE
+            CENTIMETER
             "英尺"
             FOOT
         }
