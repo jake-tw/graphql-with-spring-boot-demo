@@ -15,53 +15,53 @@ GraphQL 有三個 Root type，所有的操作都是由 Root type 向下延伸
     - example
         - Request
 
-        ```txt
-        query {
-            # This is a book.
-            book(id: 1) {
-                name
+            ```txt
+            query {
+                # This is a book.
+                book(id: 1) {
+                    name
+                }
             }
-        }
-        ```
+            ```
         
         - Response
 
-        ```json
-        {
-            "data": {
-                "book": {
-                    "name": "Effective Java"
+            ```json
+            {
+                "data": {
+                    "book": {
+                        "name": "Effective Java"
+                    }
                 }
             }
-        }
-        ```
+            ```
 
 - Mutation 用來表示增刪改，使用方法與 Query 完全相同，也能有回傳值，Mutation 關鍵字不可省略，跟 RESTful 的 POST, PUT, DELETE 相同，也可以不依規定進行查詢，或只使用 Query 完成 CRUD 的功能，但這會造成混淆，一般不推薦這樣做。
 
 - Subscription 表示長鏈結，Server 可主動推送回傳值到 Client
     - 發送 Request 訂閱 roomId 123 的聊天室
 
-    ```txt
-    subscription NewMessages {
-        newMessage(roomId: 123) {
-            sender
-            text
+        ```txt
+        subscription NewMessages {
+            newMessage(roomId: 123) {
+                sender
+                text
+            }
         }
-    }
-    ```
+        ```
 
     - 每次有新消息發送到 roomId 123 的聊天室都會收到 Response
 
-    ```txt
-    {
-        "data": {
-            "newMessage": {
-                "sender": "Hagrid",
-                "text": "You're a wizard!"
+        ```txt
+        {
+            "data": {
+                "newMessage": {
+                    "sender": "Hagrid",
+                    "text": "You're a wizard!"
+                }
             }
         }
-    }
-    ```
+        ```
 
 - 使用 Operation name 與 Alias 進一步調整 Query 內容
     - Operation name : 單純命名無實際功能
@@ -69,52 +69,52 @@ GraphQL 有三個 Root type，所有的操作都是由 Root type 向下延伸
     - example
         - Request
 
-        ```txt
-        # Operation name : AliasTest
-        # Alias : hello, world
-        query AliasTest {
-            hello: book(id: 1) {
-                world: name
+            ```txt
+            # Operation name : AliasTest
+            # Alias : hello, world
+            query AliasTest {
+                hello: book(id: 1) {
+                    world: name
+                }
             }
-        }
-        ```
+            ```
 
         - Response
 
-        ```json
-        {
-            "data": {
-                "hello": {
-                    "world": "Effective Java"
+            ```json
+            {
+                "data": {
+                    "hello": {
+                        "world": "Effective Java"
+                    }
                 }
             }
-        }
-        ```
+            ```
 
 <br> 
 
 接下來看看實際發送 POST /graphql(*1) 需要哪些東西
 
-- Header : Content-Type:application/json / Content-Type:application/graphql
+- Header : Content-Type:application/json, Content-Type:application/graphql
 - Request Body
     - application/json : 較常規的做法
         - operationName : 別名可省略
         - variables : 查詢參數，若未使用可省略，會在後面的章節詳細介紹
         - query : 查詢語句，不管是哪種操作都直接放這
 
-        ```json
-        {
-            "operationName": "aliasTest",
-            "variables": {},
-            "query": "query aliasTest { hello: book(id: 1) { world: name } }"
-        }
-        ```
+            ```json
+            {
+                "operationName": "AliasTest",
+                "variables": {},
+                "query": "query AliasTest { hello: book(id: 1) { world: name } }"
+            }
+            ```
 
-        ```json
-        {
-            "query":"mutation { deleteBook(id: 5) }"
-        }
-        ```
+            ```json
+            {
+                "query":"mutation { deleteBook(id: 5) }"
+            }
+            ```
         
     - application/graphql : 部分 Server 不接受此類型的 Header
         - Query 直接放在 Request body 中

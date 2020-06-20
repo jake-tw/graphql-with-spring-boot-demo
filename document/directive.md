@@ -7,7 +7,7 @@ Directive 需要搭配前面學到的 Variable 使用，用於調整 Query 與 S
 
         ```
         # Boolean 記得加上驚嘆號
-        query testDirective($skip: Boolean!, $include: Boolean!) {
+        query TestDirective($skip: Boolean!, $include: Boolean!) {
             allBooks @skip(if: $skip){
                 name
             }
