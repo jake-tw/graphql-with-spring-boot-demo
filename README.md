@@ -21,9 +21,10 @@
 	- [GraphQL Java](./document/graphql_java.md)
 	- [GraphQL Java Tools](./document/graphql_java_tools.md)
 	- [GraphQL SPQR](./document/graphql_spqr.md)
+	- [Plain](./document/plain.md)
+	- [DataLoader](./document/dataloader.md)
+	- [Relay](./document/relay.md)
 	- [Debug](./document/debug.md)
-- [DataLoader](./document/dataloader.md)
-- [Relay](./document/relay.md)
 - [總結](./document/summary.md)
 
 <br>
