@@ -6,7 +6,7 @@ RESTful 跟 GraphQL 主要不同在於請求的部分，GraphQL 只有固定的�
 |-|-|-|
 |進入點 | 無數個 ( GET /userId, POST /product...etc ) | 固定 ( POST /graphql, GET /graphql )|
 |Request | URL / POST body...etc | Like a Graph|
-|Response | Server 決定 | Clinet 決定|
+|Response | Server 決定 | Client 決定|
 |實作語言 | 任意 | 任意|
 |狀態 | Stateless | Stateless|
 

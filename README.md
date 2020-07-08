@@ -25,8 +25,9 @@
 	- [DataLoader](./document/dataloader.md)
 	- [Relay](./document/relay.md)
 	- [Debug](./document/debug.md)
-- [總結](./document/summary.md)
 
+<br>
+<br>
 <br>
 
 參考資料
