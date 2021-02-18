@@ -6,9 +6,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.jake</groupId>
-    <artifactId>how-to-use-graphql-with-spring-boot</artifactId>
+    <artifactId>graphql-with-spring-boot-demo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>How to use - GraphQL with Spring Boot</name>
+    <name>GraphQL with Spring Boot demo</name>
     <description>Demo project for GraphQL with Spring Boot</description>
     <packaging>pom</packaging>
 
