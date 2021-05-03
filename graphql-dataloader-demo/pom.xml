@@ -15,8 +15,8 @@
     <groupId>com.jake</groupId>
     <artifactId>graphql-dataloader-demo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>GraphQL plain demo</name>
-    <description>Demo project for GraphQL plain</description>
+    <name>GraphQL dataloader demo</name>
+    <description>Demo project for GraphQL dataloader</description>
 
     <properties>
         <java.version>1.8</java.version>
