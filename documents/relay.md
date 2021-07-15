@@ -1,4 +1,4 @@
-# Relay
+## Relay
 
 [Relay](https://relay.dev/) 是一套 React 的 GraphQL 前端框架，後端需要做的是依照 Relay 提供的 Spec 實作，GraphQL Java 也提供了非常基本的 Support，這邊簡單看一下概念就好，之後有機會使用再來深入研究
 

@@ -1,4 +1,4 @@
-# GraphQL SPQR
+## GraphQL SPQR
 
 1. Dependency
 

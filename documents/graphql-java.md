@@ -1,4 +1,4 @@
-# GraphQL Java
+## GraphQL Java
 
 1. Dependency
     - Guava 非必要，但對獲得 schema 很有幫助

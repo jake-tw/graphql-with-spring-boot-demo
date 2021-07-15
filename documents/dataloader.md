@@ -1,4 +1,4 @@
-# DataLoader
+## DataLoader
 
 當業務增長到一定程度的時候，N + 1 Query 就會開始拖慢效能，常見的效能調校方案是使用 [DataLoader](https://github.com/graphql/dataloader)，需要注意的是，過早添加 DataLoader 只是徒增程式複雜度，不見得能獲得很好的收益，使用上需要經過審慎的評估，這邊只簡單介紹一下 DataLoader 的概念
 

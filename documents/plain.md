@@ -1,4 +1,4 @@
-# Plain
+## Plain
 
 如果想自行實作 GraphQL controller，需要以下物件
 

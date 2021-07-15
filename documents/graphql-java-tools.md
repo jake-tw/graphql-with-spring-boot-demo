@@ -1,4 +1,4 @@
-# GraphQL Java Tools
+## GraphQL Java Tools
 
 1. Dependency
 
